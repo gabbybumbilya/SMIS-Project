@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Behavior</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <img src="recto.png"></img>
+    <h1>Recto Memorial National High School</h1>
+    <nav>
+        <ul>
+              <button onclick="window.location.href='dashboard.html';">Dashboard</button>
+              <button onclick="window.location.href='newpage.html';">Students Information</button>
+              <button onclick="window.location.href='report.html';">Student Misconduct</button>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+  <h1>Behavior Logs</h1>  
+
+    <div class="filters">
+  <div class="filter-group">
+    <p>Behavior Type</p>
+    <select>
+      <option>All</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <p>Grade Level</p>
+    <select>
+      <option>All</option>
+       <option>Grade 7</option>
+        <option>Grade 8</option>
+         <option>Grade 9</option>
+          <option>Grade 10</option>
+           <option>Grade 11</option>
+            <option>Grade 12</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <p>Severity Level</p>
+    <select>
+      <option>All</option>
+       <option>Positive</option>
+        <option>Negative</option>
+         <option>Low</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <p>Date Range</p>
+       <input type="text" placeholder="Search">
+  </div>
+
+  <div class="filter-group search-group">
+    <p>&nbsp;</p>
+    <input type="text" placeholder="Search by Student name or ID">
+  </div>
+
+  <div class="filter-group">
+    <p>&nbsp;</p>
+    <button class="generate-btn">Add Log</button>
+</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Student ID</th>
+          <th>Behavior Type</th>
+          <th>Description</th>
+          <th>Severity</th>
+          <th>Logged By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="button" value="view" /></td>
+        </tr> 
+      </tbody>
+    </table>
+
+    <div class="buttons">
+      <button>Export to PDF</button>
+      <button>Export to Excel</button>
+      <button>Print Report</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students Misconduct</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <header class = "main-header">
+    <img src="Picture1-Picsart-AiImageEnhancer.png"></img>
+    <h1>Recto Memorial National High School</h1>
+  </header>
+
+  <header>
+    <nav>
+        <ul>
+          <button onclick="window.location.href='dashboard.html';">Dashboard</button>
+          <button onclick="window.location.href='students-information.html';">Students Information</button>
+          <button onclick="window.location.href='students-misconduct.html';">Students Misconduct</button>
+          <button onclick="window.location.href='login.html';">Log Out</button>
+        </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Misconduct Logs</h1> 
+    <hr>
+    <br>
+  
+    <div class="filters">
+    <div class="filter-behavior">
+      <p>Behavior Type</p>
+      <select>
+        <option>All</option>
+         <option>Positive</option>
+          <option>Negative</option>
+           <option>Low</option>
+      </select>
+    </div>
+  
+    <div class="filter-gradelevel">
+      <p>Grade Level</p>
+      <select class="opt-gradelevel">
+        <option>All</option>
+         <option>Grade 7</option>
+          <option>Grade 8</option>
+           <option>Grade 9</option>
+            <option>Grade 10</option>
+             <option>Grade 11</option>
+              <option>Grade 12</option>
+      </select>
+    </div>
+  
+    <div class="search">
+      <p>&nbsp;</p>
+      <input type="text" placeholder="Search by Student name or ID">
+    </div>
+  
+    <div class="filter-group">
+      <p>&nbsp;</p>
+      <button class="generate-btn">Add Log</button>
+  </div>
+  <div class="filter-group">
+    <p>&nbsp;</p>
+    <button class="generate-btn">Load Students</button>
+  </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Full Name</th>
+          <th>No. of Cases</th>
+          <th>Last Incident Description</th>
+          <th>Last Incident Date</th>
+          <th>Last Action Taken</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php if (!empty($results)): ?>
+          <?php foreach ($results as $row): ?>
+            <tr>
+              <td><?= htmlspecialchars($row['StudId']) ?: 'N/A' ?></td>
+              <td><?= htmlspecialchars($row['Fullname']) ?: 'N/A' ?></td>
+              <td><?= htmlspecialchars($row['Cases']) ?: 0 ?></td>
+              <td><?= htmlspecialchars($row['LastDescription']) ?: 'N/A' ?></td>
+              <td><?= htmlspecialchars($row['LastIncident']) ?: 'N/A' ?></td>
+              <td><?= htmlspecialchars($row['LastAction']) ?: 'N/A' ?></td>
+            </tr>
+          <?php endforeach; ?>
+        <?php else: ?>
+          <tr>
+            <td colspan="6">No records found.</td>
+          </tr>
+        <?php endif; ?>
+      </tbody>
+    </table>
+      <tfoot>
+        <tr>
+          <td colspan="6">
+            <div class="exp-buttons">
+              <button class="export-btn" id="exportBtn">Export to PDF</button>
+              <button class="excel-btn">Export to Excel</button>
+              <button class="print-btn">Print Report</button>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+</body>
+</html>

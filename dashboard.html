@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <header class = "main-header">
+        <img src="Picture1-Picsart-AiImageEnhancer.png"></img>
+        <h1>Recto Memorial National High School</h1>
+      </header>
+      <header>
+        <nav class="navigation">
+            <ul>
+                <button onclick="window.location.href='dashboard.html';">Dashboard</button>
+                <button onclick="window.location.href='students-information.html';">Students Information</button>
+                <button onclick="window.location.href='students-misconduct.html';">Students Misconduct</button>
+                <button onclick="window.location.href='login.html';">Log Out</button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Dashboard</h1>
+        <hr>
+        <br>
+    </div>
+
+ <section class="dashboard-container">
+    <div class="linechart">
+    <div style="width: 500px; height: 600px;">
+        <canvas class="line" id="studentCasesLineChart"></canvas>
+    </div>
+</div>
+
+    <div class="piechart">
+    <script src="linechart.js"></script>
+    <div style="width: 350px; height: 350px;">
+        <canvas class="'pie" id="studentPieChart"></canvas>
+    </div>
+    <script src="piechart.js"></script>
+    </div>
+</section>
+
+<!--
+        <div class="exp-buttons">
+          <button class="export-btn" id="exportBtn">Export to PDF</button>
+          <button class="excel-btn">Export to Excel</button>
+          <button class="print-btn">Print Report</button>
+        </div>
+-->
+</body>
+</html>

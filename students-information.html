@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Information</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+        <header class="main-header">
+        <img src="Picture1-Picsart-AiImageEnhancer.png"></img>
+        <h1>Recto Memorial National High School</h1>
+    </header>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<header>
+        <nav>
+            <ul>
+                <button onclick="window.location.href='dashboard.html';">Dashboard</button>
+                <button onclick="window.location.href='students-information.html';">Students Information</button>
+                <button onclick="window.location.href='students-misconduct.html';">Students Misconduct</button>
+                <button onclick="window.location.href='login.html';">Log Out</button>
+            </ul>
+        </nav>
+    </div>
+</header>
+    
+     <!-- ////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+     <div class="container">
+        <h1>Student Information</h1>  
+        <hr>
+        <br>
+    
+        <div class="filters">
+      <div class="filter-gradelevel">
+        <p>Grade Level</p>
+        <select>
+          <option>All</option>
+          <option>Grade 7</option>
+          <option>Grade 8</option>
+          <option>Grade 9</option>
+          <option>Grade 10</option>
+          <option>Grade 11</option>
+          <option>Grade 12</option>
+        </select>
+      </div>
+    
+      <div class="filter-section">
+        <p>Section</p>
+        <select>
+          <option>Section A</option>
+          <option>Section B</option>
+          <option>Section C</option>
+          <option>Section D</option>
+          <option>Section E</option>
+          <option>Section F</option>
+        </select>
+      </div>
+    
+      <div class="search">
+        <p>&nbsp;</p>
+        <input type="text" placeholder="Search by Student name or ID">
+      </div>
+    
+      <div class="filter-group">
+        <p>&nbsp;</p>
+        <button class="add-log-btn">Add Log</button>
+        </div>
+
+        <div class="filter-group">
+          <p>&nbsp;</p>
+          <button class="generate-btn">Load Students</button>
+        </div>
+    </div>
+
+    <!--
+      <?php
+        require '../include/db.php';
+        $sql = "SELECT * FROM studinfo";
+         try {
+          $stmt = $db->query($sql);
+          $studinfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             } catch (PDOException $e) {
+          echo "Error fetching data: " . $e->getMessage();
+          $studinfo = [];
+             }
+        ?>
+    -->
+
+        <table>
+          <section>
+          <thead class="table-header">
+            <tr>
+              <th>Student ID</th>
+              <th>Fullname</th>
+              <th>Age</th>
+              <th>Grade Level</th>
+              <th>Student Type</th>
+              <th>Contact Number</th>
+              <th>Date Enrolled</th>
+            </tr>
+          </section>
+          </thead>
+            <?php if (!empty($studinfo)): ?>
+              <?php foreach ($studinfo as $info): ?>
+                <tr>
+                  <td><?= htmlspecialchars($info['StudId']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Fullname']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Age']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Gradelvl']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Studtype']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Contactno']) ?: 'N/A' ?></td>
+                  <td><?= htmlspecialchars($info['Date_Enrolled']) ?: 'N/A' ?></td>
+              <td>
+
+              <button class="edit-btn"
+                data-id="<?= $info['StudId'] ?>"
+                data-fullname="<?= htmlspecialchars($info['Fullname']) ?>"
+                data-age="<?= $info['Age'] ?>"
+                data-gradelvl="<?= $info['Gradelvl'] ?>"
+                data-studtype="<?= $info['Studtype'] ?>"
+                data-contactno="<?= $info['Contactno'] ?>"
+                data-date_enrolled="<?= $info['Date_Enrolled'] ?>">Edit</button>
+                </td>
+                </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                            <td colspan="11">No records found.</td>
+                    <?php endif; ?>
+        </table>
+    
+       
+    <!--
+    <div id="addStudentModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Student Information</h2>
+        <form id="studentForm" action="add_student.php" method="POST">
+          <input type="hidden" id="editMode" name="editMode" value="1">
+    
+          <label for="StudId">Student ID:</label>
+          <input type="text" id="StudId" name="StudId" required>
+    
+          <label for="Fullname">Full Name:</label>
+          <input type="text" id="Fullname" name="Fullname" required>
+    
+          <label for="Age">Age:</label>
+          <input type="number" id="Age" name="Age" required>
+    
+          <label for="Gradelvl">Grade Level:</label>
+          <select name="Gradelvl" id="Gradelvl">
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+    
+          <label for="Studtype">Student Type:</label>
+          <select name="Studtype" id="Studtype">
+            <option value="Regular">Regular</option>
+            <option value="Returnee">Returnee</option>
+            <option value="Transferee">Transferee</option>
+          </select>
+    
+          <label for="Contactno">Contact Number:</label>
+          <input type="text" id="Contactno" name="Contactno" required>
+    
+          <label for="Date_Enrolled">Date Enrolled:</label>
+          <input type="date" id="Date_Enrolled" name="Date_Enrolled" required>
+    
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+-->
+        <div class="export-buttons">
+          <button class="ex-btn" id="exportBtn">Export to PDF</button>
+          <button class="exc-btn">Export to Excel</button>
+          <button class="pr-btn">Print Report</button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

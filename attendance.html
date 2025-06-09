@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <img src="recto.png"></img>
+        <h1>Recto Memorial National High School</h1>
+        <nav>
+            <ul>
+                <button onclick="window.location.href='dashboard.html';">Dashboard</button>
+                <button onclick="window.location.href='newpage.html';">Students Records</button>
+                <button onclick="window.location.href='report.html';">Reports</button>
+                <button onclick="window.location.href='behavior.html';">Behavior Logs</button>
+                <button onclick="window.location.href='attendance.html';">Attendance</button>
+                <button onclick="window.location.href='login.html';">Log Out</button></button>
+            </ul>
+        </nav>
+    </header>
+
+  <div class="container">
+    <h1>Attendance</h1>  
+
+    <div class="filters">
+  <div class="filter-group">
+    <label for="start">Select Date</label>
+
+<input
+  type="date"
+  id="start"
+  name="trip-start"
+  value="2018-07-22"
+  min="2018-01-01"
+  max="2018-12-31" />
+  </div>
+
+  <div class="filter-group">
+    <p>Grade Level</p>
+    <select>
+      <option>All</option>
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <p>Section</p>
+    <select>
+      <option>Section A</option>
+    </select>
+  </div>
+
+  <div class="filter-group search-group">
+    <p>&nbsp;</p>
+    <input type="text" placeholder="Search by Student name or ID">
+  </div>
+
+  <div class="filter-group">
+    <p>&nbsp;</p>
+    <button class="generate-btn">Load Students</button>
+  </div>
+
+    <table>
+      <div class="summary">
+      <strong>Summary</strong><br>
+      Total Students: 0<br>
+      Present: 0<br>
+      Absent: 0<br>
+      Late: 0
+      </div>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Student ID</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+            <td><input type="text" value="" /></td>
+        </tr> 
+      </tbody>
+    </table>
+
+    <div class="action-buttons">
+      <button class="absent-btn">Mark All Absent</button>
+      <button class="present-btn">Mark All Present</button>
+      <button class="clear-btn">Clear All</button>
+    </div>
+
+    <div class="buttons">
+      <button id="exportBtn">Export to PDF</button>
+      <button>Export to Excel</button>
+      <button>Print Report</button>
+    </div>
+  </div>
+</body>
+</html>
+
+    
+
+
+
+
+
